@@ -8,10 +8,15 @@ type SegmentableTextBlock {
   segmentation: SegmentationReference
 }
 
+type SegmentableText {
+  text: LocaleString
+  segmentation: SegmentationReference
+}
+
 type SegmentableLink {
   _key: ID!
   _type: String
-  title: String
-  url: String
+  title: LocaleString
+  url: LocaleString
   segmentation: SegmentationReference
 }

@@ -29,7 +29,18 @@ type Block {
   children: [Span]
 }
 
+type LocaleString {
+  _type: String
+  en: String
+  fr: String
+}
+
+type Link {
+  _type: String
+  title: LocaleString
+  url: LocaleString
+}
+
 type Query {
-  storeTemplatedCards: [StoreTemplatedCard] @cacheControl(scope: PUBLIC, maxAge: LONG)
   footer: [Footer] @cacheControl(scope: PUBLIC, maxAge: LONG)
 }

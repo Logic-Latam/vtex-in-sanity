@@ -10,17 +10,17 @@ type FeaturedInformation {
 
 type IconContent {
   _key: ID!
-  _type: String
-  title: String
   icon: Image
-  segmentation: SegmentationReference
+  title: LocaleString
+  callToAction: Link
+  iconContentSegmentation: SegmentationReference
 }
 
 type LinkList {
   _key: ID!
   _type: String
-  title: String
-  links: [SegmentableLink]
+  title: LocaleString
+  linksArray: [SegmentableLink]
 }
 
 type Footer {
@@ -29,12 +29,10 @@ type Footer {
   _updatedAt: String
   _createdAt: String
   _type: String
-  title: String
-  logo: Image
-  featuredInformation: [FeaturedInformation]
-  featuredInformationSecondRow: [FeaturedInformation]
-  linkLists: [LinkList]
+  featuredInformation: [IconContent]
+  featuredInformationSecondRow: [IconContent]
+  footerLinkLists: [LinkList]
   paymentProviders: [IconContent]
   socialMedia: [IconContent]
-  licenceInformation: SegmentableTextBlock
+  licenceInformation: [SegmentableText]
 }
