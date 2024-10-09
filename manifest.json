@@ -1,16 +1,22 @@
 {
-  "name": "sanity-resolver",
+  "name": "sanity-integration",
   "vendor": "ronadev",
-  "version": "1.0.0-beta",
-  "title": "Sanity Graphql Resolver",
+  "version": "0.0.0-beta",
+  "title": "Sanity Graphql integration",
   "description": "Sanity app for VTEX IO GraphQL Service",
   "mustUpdateAt": "2022-01-04",
   "categories": [],
-  "dependencies": {},
+  "dependencies": {
+    "vtex.render-runtime": "8.x",
+    "ronadev.rona-components": "0.0.2-beta",
+    "vtex.rich-text": "0.x"
+  },
   "builders": {
+    "node": "6.x",
     "docs": "0.x",
+    "react": "3.x",
     "graphql": "1.x",
-    "node": "6.x"
+    "store": "0.x"
   },
   "scripts": {
     "prereleasy": "bash lint.sh"
@@ -29,10 +35,36 @@
     {
       "name": "outbound-access",
       "attrs": {
-        "host": "mfaylecy.api.sanity.io",
+        "host": "o2jl7jfz.api.sanity.io",
         "path": "/*"
       }
     }
   ],
+  "settingsSchema": {
+    "title": "Sanity Integration",
+    "type": "object",
+    "properties": {
+      "projectId": {
+        "title": "Sanity Project ID",
+        "description": "Enter Sanity Project ID",
+        "type": "string"
+      },
+      "dataset": {
+        "title": "Sanity Dataset",
+        "description": "Enter Sanity Dataset",
+        "type": "string"
+      },
+      "apiVersion": {
+        "title": "Sanity API Version",
+        "description": "Enter Sanity API Version (eg: 2024-09-10)",
+        "type": "string"
+      },
+      "authToken": {
+        "title": "Sanity Authorization Token",
+        "description": "Enter Authorization Token",
+        "type": "string"
+      }
+    }
+  },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
