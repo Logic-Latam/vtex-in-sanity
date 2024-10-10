@@ -1,0 +1,109 @@
+query {
+  footer @context(provider: "ronadev.sanity-integration") {
+    featuredInformation {
+      title {
+        fr
+        en
+      }
+      icon {
+        asset {
+          _ref
+          _type
+        }
+      }
+      callToAction {
+        title {
+          fr
+          en
+        }
+        url {
+          fr
+          en
+        }
+      }
+    }
+    featuredInformationSecondRow {
+      title {
+        fr
+        en
+      }
+      icon {
+        asset {
+          _ref
+          _type
+        }
+      }
+      callToAction {
+        title {
+          fr
+          en
+        }
+        url {
+          fr
+          en
+        }
+      }
+    }
+    footerLinkLists {
+      title {
+        _type
+        en
+        fr
+      }
+      linksArray {
+        title {
+          en
+          fr
+        }
+        url {
+          en
+          fr
+        }
+      }
+    }
+    paymentProviders {
+      title {
+        en
+        fr
+      }
+      icon {
+        asset {
+          _ref
+          _type
+        }
+      }
+    }
+    socialMedia {
+      title {
+        fr
+        en
+      }
+      icon {
+        asset {
+          _ref
+          _type
+        }
+      }
+      callToAction {
+        title {
+          fr
+          en
+        }
+        url {
+          fr
+          en
+        }
+      }
+    }
+    licenceInformation {
+      text {
+        en
+        fr
+      }
+      segmentation {
+        _ref
+        _type
+      }
+    }
+  }
+}

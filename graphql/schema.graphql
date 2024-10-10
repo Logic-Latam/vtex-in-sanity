@@ -42,5 +42,5 @@ type Link {
 }
 
 type Query {
-  footer: [Footer] @cacheControl(scope: PUBLIC, maxAge: LONG)
+  footer: [Footer] @cacheControl(scope: PUBLIC, maxAge: SHORT)
 }

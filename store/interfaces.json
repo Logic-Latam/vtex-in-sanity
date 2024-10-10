@@ -1,0 +1,6 @@
+{
+  "sanity-footer": {
+    "component": "DesktopFooter",
+    "render": "server"
+  }
+}
