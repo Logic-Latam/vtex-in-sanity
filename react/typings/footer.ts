@@ -2,6 +2,7 @@ export type LocaleString = {
   en: string;
   fr: string;
 };
+
 type Link = {
   title: string | LocaleString;
   url: string | LocaleString;

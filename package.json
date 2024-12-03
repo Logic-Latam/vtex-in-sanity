@@ -7,11 +7,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json}\"",
     "graphql-markdown": "node graphql-markdown-generator.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
+  "husky": {},
   "lint-staged": {
     "*.{ts,js,tsx,jsx}": [
       "eslint --fix",

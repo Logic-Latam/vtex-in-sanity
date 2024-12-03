@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-apollo';
 import { useCssHandles } from 'vtex.css-handles';
+import { useRuntime } from 'vtex.render-runtime';
 import LicenceInformation from './components/LicenceInformation';
 import FeaturedInformation from './components/FeaturedInformation';
 import IconsList from './components/IconsList';
@@ -31,7 +32,7 @@ const DesktopFooter: StorefrontFunctionComponent<RonaFooter> = (
   { logo }
 ) => {
   const { handles, withModifiers } = useCssHandles(CSS_HANDLES)
-
+  const { culture: { language } } = useRuntime()
   const { loading, error, data } = useQuery(Query, {
     fetchPolicy: 'cache-and-network',
   });
@@ -62,14 +63,14 @@ const DesktopFooter: StorefrontFunctionComponent<RonaFooter> = (
               footerLinkLists?.map((linkList, index) => (
                 <div className={`w-25 ${footerLinkLists.length === (index + 1) ? '' : 'mr7'}`} key={`${handleLocale(linkList.title)}-${index}`}>
                   <strong className="c-on-base--inverted f6 fw7 db mb6 lh-title">
-                    {handleLocale(linkList.title)}
+                    {handleLocale(linkList.title, language)}
                   </strong>
                   <ul className="list pa0 ma0">
                     {
                       linkList.linksArray?.map((link, idx) => (
                         <li key={`${handleLocale(link.title)}-${idx}`} className="db mb5">
-                          <a href={handleLocale(link.url) ?? "#"} className="c-inverted-subtle f6 fw4 no-underline underline-hover lh-title">
-                            {handleLocale(link.title)}
+                          <a href={handleLocale(link.url, language) ?? "#"} className="c-inverted-subtle f6 fw4 no-underline underline-hover lh-title">
+                            {handleLocale(link.title, language)}
                           </a>
                         </li>
                       ))
