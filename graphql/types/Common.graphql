@@ -1,0 +1,8 @@
+type IconContent {
+  _key: ID!
+  _type: String
+  icon: Image
+  title: LocaleString
+  callToAction: Link
+  iconContentSegmentation: SegmentationReference
+}

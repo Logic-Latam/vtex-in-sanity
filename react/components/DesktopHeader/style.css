@@ -1,0 +1,133 @@
+/* General Header Styling */
+.header {
+    width: 100%;
+    background-color: #002d5b;
+    /* Matches the blue color in the image */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Wrapper */
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.header-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Search Bar */
+.header-search {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.header-search input {
+    width: 90%;
+    padding: 0.5rem;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.header-search button {
+    width: 10%;
+    padding: 0.5rem;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Right Actions (Sign In & Cart) */
+.header-user-actions a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 1rem;
+    font-size: 1rem;
+}
+
+.header-cart {
+    font-size: 1.5rem;
+}
+
+/* Navigation Menu */
+.header-navigation {
+    background-color: #005090;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.header-navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.header-navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Featured Links */
+.header-right-actions {
+    background-color: #0066cc;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.header-right-actions a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.header-right-actions a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-search {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .header-search input {
+        width: 85%;
+    }
+
+    .header-search button {
+        width: 15%;
+    }
+
+    .header-navigation,
+    .header-right-actions {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}

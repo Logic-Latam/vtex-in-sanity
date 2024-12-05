@@ -1,3 +1,4 @@
+import { IconContent } from "./header";
 export type LocaleString = {
   en: string;
   fr: string;
@@ -15,10 +16,10 @@ export type SanityImageType = {
   };
 };
 
-export type IconContent = {
-  title: string | LocaleString;
-  icon: string | SanityImageType;
-};
+// export type IconContent = {
+//   title: string | LocaleString;
+//   icon: string | SanityImageType;
+// };
 
 export type LinkList = {
   title: string | LocaleString;

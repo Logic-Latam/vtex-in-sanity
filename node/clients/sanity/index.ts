@@ -54,4 +54,11 @@ export class SanityClient extends ExternalClient {
 
     return content.result;
   }
+
+
+  public async header(settings: Settings): Promise<[StoreTemplateCard]> {
+    const content = await this.getSanityContent(settings, '*[_type=="header"]');
+
+    return content.result;
+  }
 }

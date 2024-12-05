@@ -8,13 +8,6 @@ type FeaturedInformation {
   segmentation: SegmentationReference
 }
 
-type IconContent {
-  _key: ID!
-  icon: Image
-  title: LocaleString
-  callToAction: Link
-  iconContentSegmentation: SegmentationReference
-}
 
 type LinkList {
   _key: ID!

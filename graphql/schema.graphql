@@ -41,6 +41,69 @@ type Link {
   url: LocaleString
 }
 
-type Query {
+# New types for Header-related data
+type NavigationMenuLink {
+  _key: ID
+  _ref: String
+  _type: String
+}
+
+type RightAlignedMenuLink {
+  _key: ID
+  _type: String
+  callToAction: Link
+  icon: Image
+  title: LocaleString
+}
+
+type TopRightLink {
+  _key: ID
+  _type: String
+  title: LocaleString
+  url: LocaleString
+}
+
+type FeaturedLink {
+  _key: ID
+  _type: String
+  title: LocaleString
+  url: LocaleString
+}
+
+type MainNavigation {
+  title: LocaleString
+  featuredLinksTitle: LocaleString
+  featuredLinks: [FeaturedLink]
+  departmentsTitle: LocaleString
+  departments: [NavigationMenuLink]
+  additionalDepartments: [NavigationMenuLink]
+}
+
+type HeaderNavigation {
+  mainNavigation: MainNavigation
+  navigationMenuLinks: [NavigationMenuLink]
+  rightAlignedMenuLinks: [RightAlignedMenuLink]
+}
+
+type HeaderEvent {
+  _key: ID
+  _ref: String
+  _type: String
+}
+
+# type Header {
+#   _createdAt: String
+#   _id: ID
+#   _rev: String
+#   _type: String
+#   _updatedAt: String
+#   headerEvents: [HeaderEvent]
+#   headerNavigation: HeaderNavigation
+#   topRightLinks: [TopRightLink]
+# }
+
+# Extend the Query type to include Header
+ type Query {
   footer: [Footer] @cacheControl(scope: PUBLIC, maxAge: SHORT)
+  header: [Header] @cacheControl(scope: PUBLIC, maxAge: SHORT)
 }

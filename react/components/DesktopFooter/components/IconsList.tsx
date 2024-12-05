@@ -1,5 +1,5 @@
 import React from 'react'
-import type { IconContent } from '../../../typings/footer'
+import type { IconContent } from '../../../typings/header'
 import { handleLocale } from '../../../utils/localeHandler'
 import SanityImage from './SanityImage'
 

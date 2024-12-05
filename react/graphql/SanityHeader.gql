@@ -1,0 +1,141 @@
+query GetHeaderData {
+  header @context(provider: "ronadev.sanity-integration")  {
+    _id
+    _createdAt
+    _updatedAt
+
+    # Fetch header events
+    headerEvents {
+      _key
+      _ref
+      _type
+    }
+
+    # Fetch navigation data
+    headerNavigation {
+      mainNavigation {
+        title {
+          en
+          fr
+        }
+        featuredLinksTitle {
+          en
+          fr
+        }
+        featuredLinks {
+          _key
+          _type
+          title {
+            en
+            fr
+          }
+          url {
+            en
+            fr
+          }
+          linkSegmentation {
+            _ref
+            _type
+          }
+        }
+        departmentsTitle {
+          en
+          fr
+        }
+        departments {
+          _key
+          _ref
+          _type
+        }
+        additionalDepartments {
+          _key
+          _ref
+          _type
+        }
+      }
+
+      navigationMenuLinks {
+        _key
+        _ref
+        _type
+      }
+
+      rightAlignedMenuLinks {
+        _key
+        _type
+        title {
+          en
+          fr
+        }
+        callToAction {
+          title {
+            en
+            fr
+          }
+          url {
+            en
+            fr
+          }
+        }
+        icon {
+          asset {
+            _ref
+            _type
+          }
+        }
+        iconContentSegmentation {
+          _ref
+          _type
+        }
+      }
+    }
+
+    # Fetch top-right links
+    topRightLinks {
+      _key
+      _type
+      title {
+        en
+        fr
+      }
+      url {
+        en
+        fr
+      }
+    }
+  }
+}
+
+
+# query SanityHeader {
+#   header {
+#     headerNavigation {
+#       mainNavigation {
+#         departments {
+#           _ref
+#           _key
+#           title {
+#             en
+#             fr
+#           }
+#           url {
+#             en
+#             fr
+#           }
+#         }
+#         additionalDepartments {
+#           _ref
+#           _key
+#           title {
+#             en
+#             fr
+#           }
+#           url {
+#             en
+#             fr
+#           }
+#         }
+#       }
+#     }
+#   }
+# }
