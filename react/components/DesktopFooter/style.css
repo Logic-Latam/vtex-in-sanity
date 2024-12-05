@@ -1,0 +1,16 @@
+.footer-licence-information{
+  .paragraph{
+    margin: 0;
+    .link{
+      color: #fff;
+      font-size: .875rem;
+      line-height: 1.125rem;
+
+      @media screen and (max-width: 1024px) {
+        &:not(:nth-child(1)){
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

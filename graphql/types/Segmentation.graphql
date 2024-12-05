@@ -1,0 +1,22 @@
+type SegmentationReference {
+  _type: String
+  _ref: String
+}
+
+type SegmentableTextBlock {
+  text: [Block]
+  segmentation: SegmentationReference
+}
+
+type SegmentableText {
+  text: LocaleString
+  segmentation: SegmentationReference
+}
+
+type SegmentableLink {
+  _key: ID!
+  _type: String
+  title: LocaleString
+  url: LocaleString
+  segmentation: SegmentationReference
+}
