@@ -16,9 +16,7 @@
   "builders": {
     "node": "6.x",
     "docs": "0.x",
-    "react": "3.x",
-    "graphql": "1.x",
-    "store": "0.x"
+    "graphql": "1.x"
   },
   "scripts": {
     "prereleasy": "bash lint.sh"

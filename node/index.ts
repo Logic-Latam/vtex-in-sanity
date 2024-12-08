@@ -2,7 +2,7 @@ import type { ClientsConfig, ServiceContext } from '@vtex/api';
 import { LRUCache, Service } from '@vtex/api';
 
 import { Clients } from './clients';
-import { footer } from './resolvers/footer';
+import { sanityContent } from './resolvers/sanityContent';
 
 const MEDIUM_TIMEOUT_MS = 2 * 1000;
 
@@ -34,7 +34,7 @@ export default new Service({
   graphql: {
     resolvers: {
       Query: {
-        footer,
+        sanityContent,
       },
     },
   },

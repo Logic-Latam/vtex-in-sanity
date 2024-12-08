@@ -1,25 +1,15 @@
 import type { InstanceOptions, IOContext } from '@vtex/api';
 import { ExternalClient } from '@vtex/api';
 
-type StoreTemplateCard = {
-  _id: string;
-  _rev: string;
+type SanityContent = {
   _type: string;
-  _updatedAt: string;
-  _createdAt: string;
-  title: string;
-  image: {
-    _type: string;
-    asset: {
-      _ref: string;
-      _type: string;
-    };
-  };
+  _rev: string;
+  [key: string]: any;
 };
 
 type QueryResult = {
   query: string;
-  result: [StoreTemplateCard];
+  result: SanityContent[];
 };
 
 type Settings = {
@@ -32,33 +22,16 @@ type Settings = {
 export class SanityClient extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
     // super(`https://o2jl7jfz.api.sanity.io/v2022-03-07/data/query/dev-2024-05-23`, context, options);
-    super(`https://o2jl7jfz.api.sanity.io`, context, options);
+    super(``, context, options);
   }
 
-  private getSanityContent(settings: Settings, query: string): Promise<QueryResult> {
-    return this.http.get(`/v${settings.apiVersion}/data/query/${settings.dataset}?query=${query}`, {
+  public getSanityContent = async ({ projectId, dataset, apiVersion, authToken }: Settings, query: string): Promise<QueryResult> => {
+    const url = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=${query}`;
+
+    return this.http.get(url, {
       headers: {
-        Authorization: `Bearer ${settings.authToken}`,
+        Authorization: `Bearer ${authToken}`,
       },
     });
-  }
-
-  public async storeTemplatedCards(settings: Settings): Promise<[StoreTemplateCard]> {
-    const content = await this.getSanityContent(settings, '*[_type=="storeTemplatedCard"]');
-
-    return content.result;
-  }
-
-  public async footer(settings: Settings): Promise<[StoreTemplateCard]> {
-    const content = await this.getSanityContent(settings, '*[_type=="footer"]');
-
-    return content.result;
-  }
-
-
-  public async header(settings: Settings): Promise<[StoreTemplateCard]> {
-    const content = await this.getSanityContent(settings, '*[_type=="header"]');
-
-    return content.result;
-  }
+  };
 }
